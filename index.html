@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZ10 MINECRAFT SERVER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; background-color: #050505; color: #ffffff; }
+        /* 裁切 Mac 截圖頂部黑邊的關鍵 CSS */
+        .crop-top { object-fit: cover; object-position: center 100%; }
+        .minecraft-btn { transition: all 0.3s ease; background: #388e3c; border-bottom: 4px solid #1b5e20; }
+        .minecraft-btn:hover { background: #43a047; transform: translateY(2px); border-bottom-width: 2px; }
+    </style>
+</head>
+<body>
 
+    <div class="flex justify-center bg-black py-6">
+        <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/minecraft_title.jpg" alt="AZ10 Logo" class="h-20 md:h-28 object-contain">
+    </div>
+
+    <section class="relative h-[65vh] flex items-center justify-center overflow-hidden border-b border-white/10">
+        <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/title%20back%20ground.jpg" class="absolute inset-0 w-full h-full crop-top opacity-50" referrerpolicy="no-referrer">
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">AZ10</h1>
+            <p class="text-xl md:text-2xl text-green-400 font-medium">GLOBAL BEDROCK MULTI-PLAYER SURVIVAL</p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-[#0a0a0a]">
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+                <h3 class="text-gray-400 text-sm mb-2 uppercase tracking-widest">Server Address</h3>
+                <p class="text-xl font-mono text-green-400 font-bold">az10.joinmc.playit.plus</p>
+                <p class="text-xs text-gray-500 mt-1">Port: 27042</p>
+                <button onclick="navigator.clipboard.writeText('az10.joinmc.playit.plus'); alert('IP Copied!')" class="mt-4 text-xs bg-white/10 px-3 py-1 rounded hover:bg-white/20 transition">Copy IP</button>
+            </div>
+            <a href="https://discord.gg/jaZXT5Zq" target="_blank" class="minecraft-btn p-6 rounded-2xl flex items-center justify-center text-2xl font-black italic">JOIN DISCORD</a>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 text-center flex flex-col justify-center">
+                <h3 class="text-gray-400 text-sm mb-1 uppercase tracking-widest">Infrastructure</h3>
+                <p class="text-2xl font-bold">15+ FACILITIES</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-16 border-l-4 border-green-500 pl-4">SERVER BASES</h2>
+        
+        <div class="grid md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="grid grid-cols-2 gap-3">
+                <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase1.jpg" class="rounded-xl h-64 w-full crop-top" referrerpolicy="no-referrer">
+                <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase2.jpg" class="rounded-xl h-64 w-full crop-top" referrerpolicy="no-referrer">
+            </div>
+            <div>
+                <h3 class="text-4xl font-bold mb-6 italic text-green-400">Morota's Base</h3>
+                <p class="text-gray-400 leading-relaxed text-lg">A monumental survival fortress. This base showcases advanced architecture and integrated farm systems, serving as a beacon of progress on the server.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 text-right">
+                <h3 class="text-4xl font-bold mb-6 italic text-green-400">Spoon's Base</h3>
+                <p class="text-gray-400 leading-relaxed text-lg">The heart of survival innovation. Designed for both efficiency and aesthetic appeal, this base integrates perfectly with the surrounding Minecraft landscape.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 order-1 md:order-2">
+                <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/spoonsbase1.jpg" class="rounded-xl h-64 w-full crop-top" referrerpolicy="no-referrer">
+                <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/spoonsbase2.jpg" class="rounded-xl h-64 w-full crop-top" referrerpolicy="no-referrer">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center italic">SERVER INFRASTRUCTURE</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/bone%20meal%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Bone Meal Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/enderman%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Enderman Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/ghast%20tear.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Ghast Tear Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/gold%2Bxp%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Gold + XP Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/gunpowder%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Gunpowder Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/lava%20chicken.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Lava Chicken Machine</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/normal%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Normal Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/raid%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Raid Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/sand%20machine.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Sand Machine</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/sugar%20cane%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Sugar Cane Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/trade%20house.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Trade House</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/tree%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Tree Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/tridentfarm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Trident Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/wither%20skeleton%20farm.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Wither Skeleton Farm</p>
+                </div>
+                <div class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition group">
+                    <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/RaidFarm1.jpg" class="h-32 w-full crop-top rounded-lg mb-3 grayscale group-hover:grayscale-0 transition" referrerpolicy="no-referrer">
+                    <p class="text-center text-xs font-bold text-gray-300">Raid Farm v2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-4xl mx-auto px-6 border-t border-white/10">
+        <h2 class="text-2xl font-bold mb-8 italic">SERVER DISCUSSION</h2>
+        <div id="giscus-container">
+            <p class="text-gray-500 text-sm italic">Connect Giscus to enable the live comment section.</p>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-600 text-sm border-t border-white/5">
+        <p>© 2026 AZ10 MINECRAFT SERVER. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
