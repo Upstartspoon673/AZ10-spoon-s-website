@@ -124,6 +124,22 @@
         </div>
     </div>
 
+       <section class="py-24 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center italic uppercase tracking-widest">Server Infrastructure</h2>
+            <div id="infra-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+                </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-all duration-300">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-red-500 text-5xl font-light z-[110] transition-colors">&times;</button>
+        <div class="relative max-w-5xl w-full flex flex-col items-center">
+            <img id="lightbox-img" src="" class="max-h-[80vh] w-auto rounded-2xl shadow-2xl border border-white/10 object-contain shadow-green-500/10">
+            <p id="lightbox-caption" class="mt-6 text-2xl font-bold text-green-400 italic tracking-widest uppercase"></p>
+        </div>
+    </div>
+
     <section class="py-24 max-w-4xl mx-auto px-6 border-t border-white/10">
         <h2 class="text-2xl font-bold mb-8 italic uppercase tracking-widest text-center">Server Discussion</h2>
         <div id="giscus-container">
@@ -169,6 +185,7 @@
             { name: "Raid Farm v2", img: "RaidFarm1.jpg" }
         ];
 
+        // 2. Initialize Grid
         const grid = document.getElementById('infra-grid');
         grid.innerHTML = infraItems.map(item => `
             <div onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/${item.img}', '${item.name}')" 
@@ -182,32 +199,20 @@
             </div>
         `).join('');
 
-        // 2. Smooth Lightbox Animation Logic
+        // 3. Lightbox Logic
         const lightbox = document.getElementById('lightbox');
-        const lightboxContent = document.getElementById('lightbox-content');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxCaption = document.getElementById('lightbox-caption');
 
         function openLightbox(src, name) {
             lightboxImg.src = src;
             lightboxCaption.innerText = name;
-            
-            // Show background with fade
-            lightbox.classList.remove('opacity-0', 'pointer-events-none');
-            // Animate content scale
-            setTimeout(() => {
-                lightboxContent.classList.remove('scale-90');
-                lightboxContent.classList.add('scale-100');
-            }, 10);
-            
+            lightbox.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
-            lightboxContent.classList.remove('scale-100');
-            lightboxContent.classList.add('scale-90');
-            lightbox.classList.add('opacity-0', 'pointer-events-none');
-            
+            lightbox.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
@@ -215,14 +220,13 @@
             if (e.target === lightbox) closeLightbox();
         });
 
-        // 3. IP Copy Logic (English Alert)
+        // 4. IP Copy Logic (English Alert)
         function copyFullIP() {
             const fullIP = "az10.joinmc.playit.plus:27042";
             navigator.clipboard.writeText(fullIP);
             alert("Success: Server IP copied to clipboard!");
         }
     </script>
-    
 </body>
 </html>
 
