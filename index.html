@@ -17,9 +17,14 @@
             animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.6); }
+            from { opacity: 0; transform: scale(0.1); }
             to   { opacity: 1; transform: scale(1); }
         }
+        @keyframes zoomOut {
+            from { opacity: 1; transform: scale(1); }
+            to   { opacity: 0; transform: scale(0.1); }
+        }
+
     </style>
 </head>
 <body>
@@ -89,7 +94,7 @@
         </div>
     </section>
 
-    <div id="lightbox" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-all duration-300">
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md">
         <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-red-500 text-5xl font-light z-[110] transition-colors">&times;</button>
         <div class="relative max-w-5xl w-full flex flex-col items-center">
             <img id="lightbox-img" src="" class="max-h-[80vh] w-auto rounded-2xl shadow-2xl border border-white/10 object-contain shadow-green-500/10">
@@ -165,18 +170,22 @@
             lightboxImg.src = src;
             lightboxCaption.innerText = name;
             lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
             document.body.style.overflow = 'hidden';
-            lightboxImg.classList.remove('lightbox-enter');
+            lightboxImg.style.animation = 'none';
             void lightboxImg.offsetWidth;
-            lightboxImg.classList.add('lightbox-enter');
+            lightboxImg.style.animation = 'zoomIn 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
         }
-
-
+        
         function closeLightbox() {
-            lightbox.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            lightboxImg.style.animation = 'zoomOut 0.75s ease-in forwards';
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 750);
         }
-
+        
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
         });
