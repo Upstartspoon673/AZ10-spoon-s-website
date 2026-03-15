@@ -170,6 +170,7 @@
         const grid = document.getElementById('infra-grid');
         grid.innerHTML = infraItems.map(item => `
             <div onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/${item.img}', '${item.name}')" 
+                 class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition-all duration-300 group overflow-hidden cursor-pointer slide-up"> 
                  class="bg-white/5 p-2 rounded-xl border border-white/5 hover:border-green-500/50 transition-all duration-300 group overflow-hidden cursor-pointer">
                 <div class="overflow-hidden rounded-lg mb-3 h-32 w-full">
                     <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/${item.img}" 
@@ -233,8 +234,13 @@
             });
         }, { threshold: 0.15 });
 
-        document.querySelectorAll('.slide-up, .slide-left, .slide-right').forEach((el, i) => {
+                document.querySelectorAll('.slide-up, .slide-left, .slide-right').forEach((el, i) => {
             el.dataset.delay = i * 100;
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('#infra-grid .slide-up').forEach((el, i) => {
+            el.dataset.delay = i * 80;
             observer.observe(el);
         });
     </script>
