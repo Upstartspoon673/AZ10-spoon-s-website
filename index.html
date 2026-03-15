@@ -29,12 +29,12 @@
 </head>
 <body>
 
-    <div class="flex justify-center bg-black py-6">
+    <div class="flex justify-center py-6" style="background: linear-gradient(to bottom, #000000 60%, transparent 100%);">
         <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/minecraft_title.jpg" alt="AZ10 Logo" class="h-20 md:h-28 object-contain">
     </div>
 
     <section class="relative h-[65vh] flex items-center justify-center overflow-hidden border-b border-white/10">
-        <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/title%20back%20ground.jpg" class="absolute inset-0 w-full h-full crop-top opacity-80" referrerpolicy="no-referrer">
+        <img src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/title%20back%20ground.jpg" class="absolute inset-0 w-full h-full crop-top opacity-50" referrerpolicy="no-referrer">
         <div class="relative z-10 text-center px-4">
             <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">AZ10</h1>
             <p class="text-xl md:text-2xl text-green-400 font-medium">GLOBAL BEDROCK MULTI-PLAYER SURVIVAL</p>
@@ -178,12 +178,12 @@
         }
         
         function closeLightbox() {
-            lightboxImg.style.animation = 'zoomOut 0.55s ease-in forwards';
+            lightboxImg.style.animation = 'zoomOut 0.45s ease-in forwards';
             setTimeout(() => {
                 lightbox.classList.add('hidden');
                 lightbox.classList.remove('flex');
                 document.body.style.overflow = 'auto';
-            }, 550);
+            }, 450);
         }
         
         lightbox.addEventListener('click', (e) => {
