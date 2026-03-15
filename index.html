@@ -87,7 +87,6 @@
                 <img onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase1.jpg', 'Morota\'s Base')" src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase1.jpg" class="rounded-xl h-64 w-full crop-top cursor-pointer hover:opacity-80 transition" referrerpolicy="no-referrer">
                 <img onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase2.jpg', 'Morota\'s Base')" src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase2.jpg" class="rounded-xl h-64 w-full crop-top cursor-pointer hover:opacity-80 transition" referrerpolicy="no-referrer">
             </div>
-        <div>
             <div class="slide-right">
                 <h3 class="text-4xl font-bold mb-6 italic text-green-400">Morota's Base</h3>
                 <p class="text-gray-400 leading-relaxed text-lg">A monumental survival fortress. This base showcases advanced architecture and integrated farm systems, serving as a beacon of progress on the server.</p>
@@ -210,7 +209,7 @@
             if (e.target === lightbox) closeLightbox();
         });
 
-        // 4. IP Copy Logic (English Alert)
+                // 4. IP Copy Logic (English Alert)
         function copyFullIP() {
             const fullIP = "az10.joinmc.playit.plus:27042";
             navigator.clipboard.writeText(fullIP);
@@ -222,6 +221,22 @@
                 btn.classList.remove('text-green-400');
             }, 2000);
         }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-in');
+                    }, entry.target.dataset.delay || 0);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.slide-up, .slide-left, .slide-right').forEach((el, i) => {
+            el.dataset.delay = i * 100;
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
