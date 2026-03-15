@@ -20,11 +20,29 @@
             from { opacity: 0; transform: scale(0.1); }
             to   { opacity: 1; transform: scale(1); }
         }
-        @keyframes zoomOut {
+                @keyframes zoomOut {
             from { opacity: 1; transform: scale(1); }
             to   { opacity: 0; transform: scale(0.1); }
         }
-
+        .slide-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .slide-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .animate-in {
+            opacity: 1 !important;
+            transform: translate(0, 0) !important;
+        }
     </style>
 </head>
 <body>
@@ -43,18 +61,18 @@
 
     <section class="py-12 bg-[#0a0a0a]">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 text-center slide-up">
                 <h3 class="text-gray-400 text-xs mb-2 uppercase tracking-widest">Server Address</h3>
                 <p class="text-lg font-mono text-green-400 font-bold">az10.joinmc.playit.plus</p>
                 <p class="text-sm text-gray-400">Port: 27042</p>
                 <button id="copy-btn" onclick="copyFullIP()" class="mt-4 text-xs bg-white/10 px-3 py-1 rounded hover:bg-white/20 transition">Copy Full IP:Port</button>
             </div>
             
-            <a href="https://discord.gg/jaZXT5Zq" target="_blank" class="minecraft-btn p-6 rounded-2xl flex items-center justify-center text-xl font-black italic">DISCORD</a>
+            <a href="https://discord.gg/jaZXT5Zq" target="_blank" class="minecraft-btn p-6 rounded-2xl flex items-center justify-center text-xl font-black italic slide-up">DISCORD</a>
             
-            <a href="minecraft://?addExternalServer=AZ10|az10.joinmc.playit.plus:27042" class="connect-btn p-6 rounded-2xl flex items-center justify-center text-xl font-black italic text-white text-center">QUICK JOIN      (only for android)</a>
+            <a href="minecraft://?addExternalServer=AZ10|az10.joinmc.playit.plus:27042" class="connect-btn p-6 rounded-2xl flex items-center justify-center text-xl font-black italic text-white text-center slide-up">QUICK JOIN MINECRAFT for android</a>
             
-            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 text-center flex flex-col justify-center">
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 text-center flex flex-col justify-center slide-up">
                 <h3 class="text-gray-400 text-sm mb-1 uppercase tracking-widest">Platform</h3>
                 <p class="text-xl font-bold">Bedrock Edition</p>
             </div>
@@ -65,22 +83,23 @@
         <h2 class="text-3xl font-bold mb-16 border-l-4 border-green-500 pl-4 uppercase">Server Bases</h2>
         
         <div class="grid md:grid-cols-2 gap-16 items-center mb-32">
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-2 gap-3 slide-left">
                 <img onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase1.jpg', 'Morota\'s Base')" src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase1.jpg" class="rounded-xl h-64 w-full crop-top cursor-pointer hover:opacity-80 transition" referrerpolicy="no-referrer">
                 <img onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase2.jpg', 'Morota\'s Base')" src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/morotasbase2.jpg" class="rounded-xl h-64 w-full crop-top cursor-pointer hover:opacity-80 transition" referrerpolicy="no-referrer">
             </div>
-            <div>
+        <div>
+            <div class="slide-right">
                 <h3 class="text-4xl font-bold mb-6 italic text-green-400">Morota's Base</h3>
                 <p class="text-gray-400 leading-relaxed text-lg">A monumental survival fortress. This base showcases advanced architecture and integrated farm systems, serving as a beacon of progress on the server.</p>
             </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 text-right">
+            <div class="order-2 md:order-1 text-right slide-left">
                 <h3 class="text-4xl font-bold mb-6 italic text-green-400">Spoon's Base</h3>
                 <p class="text-gray-400 leading-relaxed text-lg">The heart of survival innovation. Designed for both efficiency and aesthetic appeal, this base integrates perfectly with the surrounding Minecraft landscape.</p>
             </div>
-            <div class="grid grid-cols-2 gap-3 order-1 md:order-2">
+            <div class="grid grid-cols-2 gap-3 order-1 md:order-2 slide-right">
                 <img onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/spoonsbase1.jpg', 'Spoon\'s Base')" src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/spoonsbase1.jpg" class="rounded-xl h-64 w-full crop-top cursor-pointer hover:opacity-80 transition" referrerpolicy="no-referrer">
                 <img onclick="openLightbox('https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/spoonsbase2.jpg', 'Spoon\'s Base')" src="https://raw.githubusercontent.com/Upstartspoon673/az10-image/main/spoonsbase2.jpg" class="rounded-xl h-64 w-full crop-top cursor-pointer hover:opacity-80 transition" referrerpolicy="no-referrer">
 
