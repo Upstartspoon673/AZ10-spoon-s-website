@@ -12,7 +12,14 @@
         .minecraft-btn { transition: all 0.3s ease; background: #388e3c; border-bottom: 4px solid #1b5e20; }
         .minecraft-btn:hover { background: #43a047; transform: translateY(2px); border-bottom-width: 2px; }
         .connect-btn { transition: all 0.3s ease; background: #1976d2; border-bottom: 4px solid #0d47a1; }
-        .connect-btn:hover { background: #1e88e5; transform: translateY(2px); border-bottom-width: 2px; }
+                .connect-btn:hover { background: #1e88e5; transform: translateY(2px); border-bottom-width: 2px; }
+        .lightbox-enter {
+            animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.6); }
+            to   { opacity: 1; transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -35,7 +42,7 @@
                 <h3 class="text-gray-400 text-xs mb-2 uppercase tracking-widest">Server Address</h3>
                 <p class="text-lg font-mono text-green-400 font-bold">az10.joinmc.playit.plus</p>
                 <p class="text-sm text-gray-400">Port: 27042</p>
-                <button onclick="copyFullIP()" class="mt-4 text-xs bg-white/10 px-3 py-1 rounded hover:bg-white/20 transition">Copy Full IP:Port</button>
+                <button id="copy-btn" onclick="copyFullIP()" class="mt-4 text-xs bg-white/10 px-3 py-1 rounded hover:bg-white/20 transition">Copy Full IP:Port</button>
             </div>
             
             <a href="https://discord.gg/jaZXT5Zq" target="_blank" class="minecraft-btn p-6 rounded-2xl flex items-center justify-center text-xl font-black italic">DISCORD</a>
@@ -159,7 +166,11 @@
             lightboxCaption.innerText = name;
             lightbox.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+            lightboxImg.classList.remove('lightbox-enter');
+            void lightboxImg.offsetWidth;
+            lightboxImg.classList.add('lightbox-enter');
         }
+
 
         function closeLightbox() {
             lightbox.classList.add('hidden');
@@ -174,7 +185,13 @@
         function copyFullIP() {
             const fullIP = "az10.joinmc.playit.plus:27042";
             navigator.clipboard.writeText(fullIP);
-            alert("Success: Server IP copied to clipboard!");
+            const btn = document.getElementById('copy-btn');
+            btn.innerHTML = '✅ Copied!';
+            btn.classList.add('text-green-400');
+            setTimeout(() => {
+                btn.innerHTML = 'Copy Full IP:Port';
+                btn.classList.remove('text-green-400');
+            }, 2000);
         }
     </script>
 </body>
